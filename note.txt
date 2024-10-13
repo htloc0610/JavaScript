@@ -1,0 +1,2 @@
+alert(""); : hiện thị thông báo popup
+console.log(""); : xuất thông tin ra màn hình điều khiển, thông tin debug, phát hiện và sửa lỗi mã nguồn
