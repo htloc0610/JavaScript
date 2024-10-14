@@ -420,14 +420,53 @@ let student = {
 // console.log(`${sq1.calculateArea()}`);
 // console.log(`${rec1.calculateArea()}`);
 
-class SinhVien {
-  constructor(fullName, ID, birthYear, homeTown) {
-    this.fullName = fullName;
-    this.ID = ID;
-    this.birthYear = birthYear;
-    this.homeTown = homeTown;
+// class SinhVien {
+//   constructor(fullName, ID, birthYear, homeTown, score) {
+//     this.fullName = fullName;
+//     this.ID = ID;
+//     this.birthYear = birthYear;
+//     this.homeTown = homeTown;
+//     this._score = score; //protected
+//   }
+//   showInfo() {
+//     return `${this.fullName} ${this.ID} ${this.homeTown}}`;
+//   }
+//   get score() {
+//     return this._score;
+//   }
+
+//   set score(value) {
+//     this._score = value;
+//   }
+// }
+
+// const join = new SinhVien("P20202", "Lộc", 2021, "Đăk Lăk", 95);
+// console.log(join.score);
+// join.score = 250;
+// console.log(join.score);
+
+class Wallet {
+  constructor(bankName, pin) {
+    this.bankName = bankName;
+    this._pin = pin;
+    this._balance = 0;
   }
-  showInfo() {
-    return `${this.fullName} ${this.ID} ${this.homeTown}}`;
+
+  deposit(value) {
+    this._balance += value;
+  }
+
+  widthdraw(value) {
+    if (value > this._balance) {
+      console.log("Không đủ");
+    } else {
+      this._balance -= value;
+      console.log("Đủ");
+    }
   }
 }
+
+const wallet = new Wallet("MBBank", "1234");
+wallet.deposit(500);
+wallet.widthdraw(300);
+console.log(wallet._balance);
