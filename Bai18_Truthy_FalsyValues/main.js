@@ -426,17 +426,17 @@ let student = {
 //     this.ID = ID;
 //     this.birthYear = birthYear;
 //     this.homeTown = homeTown;
-//     this._score = score; //protected
+//     this.#score = score; //protected
 //   }
 //   showInfo() {
 //     return `${this.fullName} ${this.ID} ${this.homeTown}}`;
 //   }
 //   get score() {
-//     return this._score;
+//     return this.#score;
 //   }
 
 //   set score(value) {
-//     this._score = value;
+//     this.#score = value;
 //   }
 // }
 
@@ -446,27 +446,57 @@ let student = {
 // console.log(join.score);
 
 class Wallet {
+  #pin;
+  #balance;
+  #isPinEntered = false;
   constructor(bankName, pin) {
     this.bankName = bankName;
-    this._pin = pin;
-    this._balance = 0;
+    this.#pin = pin;
+    this.#balance = 0;
   }
 
   deposit(value) {
-    this._balance += value;
+    this.#balance += value;
+  }
+  // ====================================
+  #validatePin(pin) {
+    return this.#pin === pin;
   }
 
+  //   Public
+  enterPin(pin) {
+    if (this.#validatePin(pin) === true) {
+      this.#isPinEntered = true;
+    } else {
+      console.log("Sai");
+    }
+  }
+  // ====================================
   widthdraw(value) {
-    if (value > this._balance) {
+    if (!this.#isPinEntered) {
+      console.log("Sai");
+      return;
+    }
+    if (value > this.#balance) {
       console.log("Không đủ");
     } else {
-      this._balance -= value;
+      this.#balance -= value;
       console.log("Đủ");
     }
+  }
+
+  get balance() {
+    if (!this.#isPinEntered) {
+      console.log("Sai");
+      return;
+    }
+    return this.#balance;
   }
 }
 
 const wallet = new Wallet("MBBank", "1234");
 wallet.deposit(500);
+wallet.enterPin("1234");
 wallet.widthdraw(300);
-console.log(wallet._balance);
+console.log(wallet.balance);
+console.log(wallet);
