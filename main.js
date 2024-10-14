@@ -70,3 +70,116 @@
 // Hoisting: di chuyển khai báo lên đầu phạm vi hiện tại (lệnh, hàm, block)
 // var nâng cao lên tập lệnh, hàm hiện tại, có thể sử dụng trước khi được khai báo
 // let, const nâng cao lên đầu phạm vi block scope, nhưng không thể sử dụng trước khi được khai báo
+// console.log(c);
+// let c = 5;
+// console.log(c);
+
+//var: function scope, let, const: block scope
+// function example() {
+//   console.log(y);
+//   if (true) {
+//     var y = 20;
+//     console.log(y);
+//   }
+//   console.log(y);
+// }
+// example();
+
+// let, const: block scope
+// function example() {
+//   if (true) {
+//     let y = 20;
+//     console.log(y);
+//   }
+//   console.log(y);
+// }
+// example();
+
+// Declaration -> có hosting
+// function tinhGiaiThua(N) {
+//   if (N === 1 || N === 0) {
+//     return 1;
+//   }
+//   return N * tinhGiaiThua(N - 1);
+// }
+// console.log(tinhGiaiThua(6));
+
+// ===================================================String=================================================================
+// String
+// console.log(`hu\nhu`);
+// let ten = "huuh";
+// console.log(ten[0]);
+
+// length
+// console.log(ten.length);
+
+// slice, substring
+// console.log("0123456789".slice(0, 2));
+// console.log("0123456789".slice(2));
+// console.log("0123456789".substring(0, 2));
+
+// trim(), trimEnd(), trimStart()
+// let s11 = "             he               lo           lwo               ";
+// console.log(s11.trim().length);
+// console.log(s11.trimEnd().length);
+// console.log(s11.trimStart().length);
+
+//concat(), toUpperCase(), toLowerCase(), charAt()
+// console.log(`abc`.concat(`bcd`));
+// console.log(`abc`.toUpperCase());
+// console.log(`aBc`.toLowerCase());
+// console.log(`aBc`.charAt(2));
+
+// replace (oldValue, newValue) repeat (count)
+// console.log(`abc def  def`.replace("def", "abc"));
+// console.log(`abc def  def`.replace(/def/g, "abc"));
+// console.log(`abc `.repeat(3));
+
+//  indexOf , lastIndexOf, includes
+// console.log(`abc def  def`.indexOf("d"));
+// // từ 5 trở đi
+// console.log(`abc def  def`.indexOf("d", 5));
+// console.log(`abc def  def`.lastIndexOf("d"));
+// // từ đầu đến 6
+// console.log(`abc def  def`.lastIndexOf("d", 6));
+// // kiếm từ 7
+// console.log(`abc def  def`.includes("def", 7));
+
+// startsWith()
+// console.log(`abc def  def`.startsWith("def"));
+// // Kiếm từ 4
+// console.log(`abc def  def`.startsWith("def", 4));
+// //endsWith()
+// console.log(`abc def  def`.endsWith("def"));
+// console.log(`abc def  def`.startsWith("def", 3));
+
+// split()
+// có limit
+// let arr = "apple,orange,banana".split(",", 2);
+// let arr2 = "apple,orange,banana".split("");
+// console.log(arr);
+// console.log(arr2);
+// for (var x of arr) {
+//   console.log(x);
+// }
+
+// Date
+// let date = new Date();
+// console.log(date.getMonth() + 1);
+// console.log(date.getFullYear());
+// console.log(date.getDay());
+// console.log(date.getHours());
+// console.log(date.getMinutes());
+// console.log(date.getSeconds());
+
+// let counter = 0;
+
+// function abc() {
+//   console.log(counter++);
+//   if (counter === 5) {
+//     clearInterval(a);
+//   }
+// }
+
+// // setTimeout(abc(), 1000);
+// let a = setInterval(abc, 100);
