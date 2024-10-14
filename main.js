@@ -66,3 +66,7 @@
 // global scope: toàn cục, truy được mọi nơi
 // function-scope: phạm vi của hàm
 // block-scope: phạm vi của khối
+
+// Hoisting: di chuyển khai báo lên đầu phạm vi hiện tại (lệnh, hàm, block)
+// var nâng cao lên tập lệnh, hàm hiện tại, có thể sử dụng trước khi được khai báo
+// let, const nâng cao lên đầu phạm vi block scope, nhưng không thể sử dụng trước khi được khai báo
