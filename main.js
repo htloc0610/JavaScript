@@ -183,3 +183,62 @@
 
 // // setTimeout(abc(), 1000);
 // let a = setInterval(abc, 100);
+
+// Array
+// let arr = [];
+// console.log(arr);
+// let arr1 = [1, 2, "huhu", true];
+// console.log(arr1[2]);
+
+// let a = new Array(5);
+// console.log(a);
+
+// concat(), push(), unshift(), pop(), shift(), slice(): tạo bản sao, includes()
+// console.log([1, `huhu`, 2, 3].concat([5, 6, "hehe"]));
+// let a = new Array(1, `huhu`, 2, 3);
+// a.push("aaa", 7, true);
+// console.log(a);
+// console.log(a.unshift());
+// console.log(a.pop());
+// console.log(a);
+// console.log(a.shift());
+// console.log(a);
+
+// let b = a.slice();
+// console.log(b);
+// console.log(b.includes("aaa"));
+
+// indexOf(), lastIndexOf(), reverse(), join(separator)
+// console.log([1, 2, "abc", 4].indexOf(0));
+// console.log([1, 2, 2, "abc", 4].indexOf(2));
+// console.log([1, 2, 2, "abc", 4].lastIndexOf(2));
+// console.log([1, 2, 2, "abc", 4].reverse());
+// console.log([1, 2, 2, "abc", 4].join());
+
+// splice(start, count, num1, num2, ...)
+// let a = [1, 2, "33", 4, 5];
+// a.splice(2, 2, 2, 4, 5);
+// console.log(a);
+// console.log([1, 2, "33", 4, 5].splice(0, 0));
+
+// spread()
+// let a = [1, 2, 3];
+// let b = [...a];
+// console.log(b);
+// let c = [...a, ...b, 4];
+// console.log(...c);
+// console.log(sum(...a));
+// console.log(sum(...c));
+
+// function sum(a, b, c) {
+//   return a + b + c;
+// }
+
+// let M = ["b", "a", "c", 1];
+// let M2 = [1, 223, 4, 3323];
+// let b = M2.sort();
+// console.log(b);
+// let c = M2.sort((a, b) => a - b);
+// console.log(c);
+
+// reduce()
