@@ -241,4 +241,193 @@
 // let c = M2.sort((a, b) => a - b);
 // console.log(c);
 
-// reduce()
+// reduce(function, [initialValue])
+// let M1 = [1, 2, 3];
+// let sum2 = M1.reduce(
+//   // Function
+//   (accumulator, currentValue, currentIndex, array) => {
+//     return currentValue + accumulator;
+//   },
+//   0
+// );
+// console.log(sum2);
+
+// filter()
+
+let student = {
+  fullName: "Tran Nhu Nhong",
+  birthYear: 2005,
+  andress: {
+    city: "Hanoi",
+    country: "VietNam",
+  },
+  score: [8, 9, 10],
+  getAge: function () {
+    return 2024 - this.birthYear;
+  },
+  getAge2: function () {
+    this.age = 2024 - this.birthYear;
+    return this.age;
+  },
+  dtb: function () {
+    sumScore = this.score.reduce((a, b) => a + b, 0);
+    return sumScore / 3;
+  },
+};
+
+// student["web"] = "huhu";
+// student["web"] = "abc";
+// console.log(student);
+// console.log(student["andress"].city);
+// console.log(student.getAge2());
+// console.log(student.age);
+// console.log(student.dtb());
+
+// console.log(Object.keys(student));
+// console.log(Object.values(student));
+// console.log(Object.entries(student));
+
+// let target = { c: 100 };
+// let source1 = { a: 1 };
+// let source2 = { b: 2 };
+// Object.assign(target, source1, source2);
+// console.log(target);
+// console.log(target.hasOwnProperty("a"));
+// Object.freeze(target);
+// delete target.a;
+// console.log(target);
+
+// var cho tái định nghĩa, let thì không
+// const target = { c: 100 };
+// target.isAdmin = true;
+// console.log(target);
+
+// const SinhVien = function (fullName, ID, birthYear, homeTown) {
+//   this.fullName = fullName;
+//   this.ID = ID;
+//   this.birthYear = birthYear;
+//   this.homeTown = homeTown;
+//   this.showInfo = function () {
+//     return `${fullName} ${ID} ${birthYear} ${homeTown}`;
+//   };
+// };
+
+// function SinhVien2(fullName, ID, birthYear, homeTown) {
+//   this.fullName = fullName;
+//   this.ID = ID;
+//   this.birthYear = birthYear;
+//   this.homeTown = homeTown;
+//   this.showInfo = function () {
+//     return `${fullName} ${ID} ${birthYear} ${homeTown}`;
+//   };
+// }
+
+// console.log(new SinhVien2("Lộc", 123, 2004, "Đăk Lăk"));
+// console.log(Object.getPrototypeOf(new SinhVien2("Lộc", 123, 2004, "Đăk Lăk")));
+
+// let M = new Array();
+// console.log(M);
+// console.log(typeof M);
+// console.log(M);
+
+// class SinhVien {
+//   constructor(fullName, ID, birthYear, homeTown) {
+//     this.fullName = fullName;
+//     this.ID = ID;
+//     this.birthYear = birthYear;
+//     this.homeTown = homeTown;
+//   }
+//   showInfo() {
+//     return `${this.fullName} ${this.ID} ${this.homeTown}}`;
+//   }
+
+//   //   static
+//   static calcArea(radius) {
+//     return Math.PI * radius * radius;
+//   }
+// }
+// SinhVien.prototype.calcAge = function (year) {
+//   return year - this.birthYear;
+// };
+// console.log(SinhVien.calcArea(5.6));
+
+// let a = new SinhVien("Lộc", 1, 1, "Đăk Lăk");
+// a.name = "abc";
+// console.log(a.calcAge(2024));
+
+// class School {
+//   constructor(id, name, birthYear) {
+//     this.id = id;
+//     this.name = name;
+//     this.birthYear = birthYear;
+//   }
+
+//   calcAge(currentYear) {
+//     return currentYear - this.birthYear;
+//   }
+// }
+
+// class Student extends School {
+//   constructor(id, name, birthYear, major) {
+//     super(id, name, birthYear); //Gọi constructor cha
+//     this.major = major;
+//   }
+
+//   study() {
+//     console.log(`${this.name} ${this.major}`);
+//   }
+// }
+
+// const p1 = new School("P2004001", "Jacky", 2000);
+// console.log(`${p1.id} ${p1.calcAge(2024)}`);
+
+// const p2 = new Student("P2004001", "Jacky", 2000, "Student");
+// console.log(p2);
+// console.log(`${p2.id} ${p2.calcAge(2024)}`);
+// p2.study();
+
+// class Shape {
+//   constructor(name) {
+//     this.name = name;
+//   }
+//   calculateArea() {
+//     return 0;
+//   }
+// }
+
+// class Square extends Shape {
+//   constructor(name, side) {
+//     super(name);
+//     this.side = side;
+//   }
+//   calculateArea() {
+//     return this.side * this.side;
+//   }
+// }
+// class Rectangle extends Shape {
+//   constructor(name, width, height) {
+//     super(name);
+//     this.width = width;
+//     this.height = height;
+//   }
+//   calculateArea() {
+//     return this.width * this.height;
+//   }
+// }
+
+// const sq1 = new Square("Hình vuông", 1);
+// const rec1 = new Rectangle("Hình chữ nhật", 4, 2);
+// console.log(`${sq1.calculateArea()}`);
+// console.log(`${rec1.calculateArea()}`);
+
+class SinhVien {
+  constructor(fullName, ID, birthYear, homeTown) {
+    this.fullName = fullName;
+    this.ID = ID;
+    this.birthYear = birthYear;
+    this.homeTown = homeTown;
+  }
+  showInfo() {
+    return `${this.fullName} ${this.ID} ${this.homeTown}}`;
+  }
+}
