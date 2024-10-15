@@ -51,3 +51,27 @@
 //     document.body.style.background = "red";
 //   }
 // });
+
+// const form = document.querySelector("#login");
+// form.addEventListener("submit", function (e) {
+//   e.preventDefault();
+// });
+
+// const form = document.querySelector("#login");
+// const userName = document.querySelector("#name");
+// const ulList = document.querySelector("#list");
+// form.addEventListener("submit", function (e) {
+//   e.preventDefault();
+//   const liTag = document.createElement("li");
+//   liTag.textContent = userName.value;
+//   ulList.appendChild(liTag);
+//   userName.value = "";
+// });
+
+// const input = document.querySelector("#name");
+// // input.addEventListener("change", function (e) {
+// //   console.log(e);
+// // });
+// input.addEventListener("input", function (e) {
+//   console.log(e);
+// });
